@@ -1,41 +1,66 @@
 import face_recognition
 from PIL import Image, ImageDraw
 
+################################################################################
 
-image_of_bill = face_recognition.load_image_file('./img/known/Bill Gates.jpg')
-
-#face encoding(This will get facial features that can compare to other images)
-
-#[0] means this method gives an array we just want the first item
-bill_face_encoding = face_recognition.face_encodings(image_of_bill)[0]
-
-
-
-image_of_steve = face_recognition.load_image_file('./img/known/Steve Jobs.jpg')
+image_of_senura = face_recognition.load_image_file('./img/known/Senura.jpg')
 
 #face encoding(This will get facial features that can compare to other images)
 
 #[0] means this method gives an array we just want the first item
-steve_face_encoding = face_recognition.face_encodings(image_of_steve)[0]
+senura_face_encoding = face_recognition.face_encodings(image_of_senura)[0]
+
+################################################################################
+
+image_of_lahiru = face_recognition.load_image_file('./img/known/Lahiru.jpg')
+
+#face encoding(This will get facial features that can compare to other images)
+
+#[0] means this method gives an array we just want the first item
+lahiru_face_encoding = face_recognition.face_encodings(image_of_lahiru)[0]
+
+################################################################################
+
+image_of_rusiru = face_recognition.load_image_file('./img/known/Rusiru.jpg')
+
+#face encoding(This will get facial features that can compare to other images)
+
+#[0] means this method gives an array we just want the first item
+rusiru_face_encoding = face_recognition.face_encodings(image_of_rusiru)[0]
+
+################################################################################
+
+image_of_kalana = face_recognition.load_image_file('./img/known/Kalana.jpg')
+
+#face encoding(This will get facial features that can compare to other images)
+
+#[0] means this method gives an array we just want the first item
+kalana_face_encoding = face_recognition.face_encodings(image_of_kalana)[0]
+
+################################################################################
 
 #create array of encoding and names
 known_face_encodings = [
 
- bill_face_encoding,
- steve_face_encoding
+ senura_face_encoding,
+ lahiru_face_encoding,
+ rusiru_face_encoding,
+ kalana_face_encoding
  
 
 ]
 
 known_face_names = [
 
-    "Bill Gates",
-    "Steve Jobs"
+    "Senura Jayadeva",
+    "Lahiru Fernando",
+    "Rusiru Abishek",
+    "Kalana Gayanga"
 
 ]
 
 #Load Test Image to find faces in
-test_image = face_recognition.load_image_file('./img/groups/bill-steve.jpg')
+test_image = face_recognition.load_image_file('./img/groups/team4.jpg')
 
 #find faces in test image
 face_locations = face_recognition.face_locations(test_image)
